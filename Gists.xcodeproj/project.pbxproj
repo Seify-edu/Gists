@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		602B44C5201C4BC3002F15AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B44C4201C4BC3002F15AE /* AppDelegate.m */; };
-		602B44C8201C4BC3002F15AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B44C7201C4BC3002F15AE /* ViewController.m */; };
-		602B44CB201C4BC3002F15AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602B44C9201C4BC3002F15AE /* Main.storyboard */; };
+		602B44C8201C4BC3002F15AE /* GistListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B44C7201C4BC3002F15AE /* GistListView.m */; };
 		602B44CD201C4BC3002F15AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602B44CC201C4BC3002F15AE /* Assets.xcassets */; };
 		602B44D0201C4BC3002F15AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602B44CE201C4BC3002F15AE /* LaunchScreen.storyboard */; };
 		602B44D3201C4BC3002F15AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B44D2201C4BC3002F15AE /* main.m */; };
+		60C9D2AE201C5BE400C920E2 /* GistListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */; };
+		60C9D2B1201C62E100C920E2 /* GistListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2B0201C62E100C920E2 /* GistListPresenter.m */; };
+		60C9D2B5201C71E200C920E2 /* GistListAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2B4201C71E200C920E2 /* GistListAssembler.m */; };
+		60C9D2B9201C784A00C920E2 /* GistListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60C9D2B8201C784A00C920E2 /* GistListView.xib */; };
+		60E33136201C858B00F8BBB0 /* GistListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E33134201C858B00F8BBB0 /* GistListCell.m */; };
+		60E33137201C858B00F8BBB0 /* GistListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E33135201C858B00F8BBB0 /* GistListCell.xib */; };
+		60E3313A201C8A2E00F8BBB0 /* GistListElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E33139201C8A2E00F8BBB0 /* GistListElement.m */; };
 		881BD82399A3F2B60EA28EAF /* libPods-Gists.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3D571F5FE9C9AA0CC49612 /* libPods-Gists.a */; };
 /* End PBXBuildFile section */
 
@@ -21,14 +27,25 @@
 		602B44C0201C4BC3002F15AE /* Gists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602B44C3201C4BC3002F15AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		602B44C4201C4BC3002F15AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		602B44C6201C4BC3002F15AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		602B44C7201C4BC3002F15AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		602B44CA201C4BC3002F15AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		602B44C6201C4BC3002F15AE /* GistListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListView.h; sourceTree = "<group>"; };
+		602B44C7201C4BC3002F15AE /* GistListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListView.m; sourceTree = "<group>"; };
 		602B44CC201C4BC3002F15AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		602B44CF201C4BC3002F15AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		602B44D1201C4BC3002F15AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602B44D2201C4BC3002F15AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		60C5AA30A76E116FE3662578 /* Pods-Gists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gists.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gists/Pods-Gists.release.xcconfig"; sourceTree = "<group>"; };
+		60C9D2AC201C5BE400C920E2 /* GistListInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListInteractor.h; sourceTree = "<group>"; };
+		60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListInteractor.m; sourceTree = "<group>"; };
+		60C9D2AF201C62E100C920E2 /* GistListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListPresenter.h; sourceTree = "<group>"; };
+		60C9D2B0201C62E100C920E2 /* GistListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListPresenter.m; sourceTree = "<group>"; };
+		60C9D2B3201C71E200C920E2 /* GistListAssembler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListAssembler.h; sourceTree = "<group>"; };
+		60C9D2B4201C71E200C920E2 /* GistListAssembler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListAssembler.m; sourceTree = "<group>"; };
+		60C9D2B8201C784A00C920E2 /* GistListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistListView.xib; sourceTree = "<group>"; };
+		60E33133201C858B00F8BBB0 /* GistListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListCell.h; sourceTree = "<group>"; };
+		60E33134201C858B00F8BBB0 /* GistListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListCell.m; sourceTree = "<group>"; };
+		60E33135201C858B00F8BBB0 /* GistListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistListCell.xib; sourceTree = "<group>"; };
+		60E33138201C8A2E00F8BBB0 /* GistListElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListElement.h; sourceTree = "<group>"; };
+		60E33139201C8A2E00F8BBB0 /* GistListElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListElement.m; sourceTree = "<group>"; };
 		8F3D571F5FE9C9AA0CC49612 /* libPods-Gists.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gists.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,15 +101,34 @@
 			children = (
 				602B44C3201C4BC3002F15AE /* AppDelegate.h */,
 				602B44C4201C4BC3002F15AE /* AppDelegate.m */,
-				602B44C6201C4BC3002F15AE /* ViewController.h */,
-				602B44C7201C4BC3002F15AE /* ViewController.m */,
-				602B44C9201C4BC3002F15AE /* Main.storyboard */,
+				60C9D2B2201C71CC00C920E2 /* GistList */,
 				602B44CC201C4BC3002F15AE /* Assets.xcassets */,
 				602B44CE201C4BC3002F15AE /* LaunchScreen.storyboard */,
 				602B44D1201C4BC3002F15AE /* Info.plist */,
 				602B44D2201C4BC3002F15AE /* main.m */,
 			);
 			path = Gists;
+			sourceTree = "<group>";
+		};
+		60C9D2B2201C71CC00C920E2 /* GistList */ = {
+			isa = PBXGroup;
+			children = (
+				60C9D2B3201C71E200C920E2 /* GistListAssembler.h */,
+				60C9D2B4201C71E200C920E2 /* GistListAssembler.m */,
+				602B44C6201C4BC3002F15AE /* GistListView.h */,
+				602B44C7201C4BC3002F15AE /* GistListView.m */,
+				60C9D2B8201C784A00C920E2 /* GistListView.xib */,
+				60E33133201C858B00F8BBB0 /* GistListCell.h */,
+				60E33134201C858B00F8BBB0 /* GistListCell.m */,
+				60E33135201C858B00F8BBB0 /* GistListCell.xib */,
+				60C9D2AF201C62E100C920E2 /* GistListPresenter.h */,
+				60C9D2B0201C62E100C920E2 /* GistListPresenter.m */,
+				60C9D2AC201C5BE400C920E2 /* GistListInteractor.h */,
+				60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */,
+				60E33138201C8A2E00F8BBB0 /* GistListElement.h */,
+				60E33139201C8A2E00F8BBB0 /* GistListElement.m */,
+			);
+			path = GistList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +192,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60E33137201C858B00F8BBB0 /* GistListCell.xib in Resources */,
 				602B44D0201C4BC3002F15AE /* LaunchScreen.storyboard in Resources */,
 				602B44CD201C4BC3002F15AE /* Assets.xcassets in Resources */,
-				602B44CB201C4BC3002F15AE /* Main.storyboard in Resources */,
+				60C9D2B9201C784A00C920E2 /* GistListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,23 +257,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				602B44C8201C4BC3002F15AE /* ViewController.m in Sources */,
+				602B44C8201C4BC3002F15AE /* GistListView.m in Sources */,
+				60E3313A201C8A2E00F8BBB0 /* GistListElement.m in Sources */,
+				60C9D2B1201C62E100C920E2 /* GistListPresenter.m in Sources */,
 				602B44D3201C4BC3002F15AE /* main.m in Sources */,
 				602B44C5201C4BC3002F15AE /* AppDelegate.m in Sources */,
+				60E33136201C858B00F8BBB0 /* GistListCell.m in Sources */,
+				60C9D2AE201C5BE400C920E2 /* GistListInteractor.m in Sources */,
+				60C9D2B5201C71E200C920E2 /* GistListAssembler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		602B44C9201C4BC3002F15AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				602B44CA201C4BC3002F15AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		602B44CE201C4BC3002F15AE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

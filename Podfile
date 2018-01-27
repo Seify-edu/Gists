@@ -7,5 +7,6 @@ target 'Gists' do
 
   # Pods for Gists
 	pod 'AFNetworking', '~> 3.0'
+	pod 'SDWebImage', '~> 4.0'
 
 end
