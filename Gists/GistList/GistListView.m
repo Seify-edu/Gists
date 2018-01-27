@@ -13,6 +13,7 @@
 
 @interface GistListView ()
 @property NSArray<GistListElement *> *data;
+@property CGPoint contentOffset;
 @end
 
 @implementation GistListView
@@ -28,8 +29,10 @@
 #pragma mark - GistListDataSourceDelegate
 
 - (void)showData:(NSArray<GistListElement *> *)data {
+    self.contentOffset = self.tableView.contentOffset;
     self.data = data;
     [self.tableView reloadData];
+    self.tableView.contentOffset = self.contentOffset;
 }
 
 - (void)showError:(NSError *)error {
@@ -69,6 +72,10 @@
          [cell.photoView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"default_photo"]];
      }
  
+     if ( indexPath.row == [self.data count] - 1 ) {
+         [self.presenter didScrollToLastElement];
+     }
+     
      return cell;
  }
 

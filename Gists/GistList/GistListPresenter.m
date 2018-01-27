@@ -9,6 +9,7 @@
 #import "GistListPresenter.h"
 
 @interface GistListPresenter()<GistListInteractorOutput, GistListViewOutput>
+@property NSMutableArray *gists;
 @end
 
 @implementation GistListPresenter
@@ -16,6 +17,7 @@
 #pragma mark - GistListDataLoaderDelegate
 
 - (void)didLoadGists:(NSArray *)gists {
+    [self.gists addObjectsFromArray:gists];
     [self.view showData:gists];
 }
 
@@ -26,7 +28,11 @@
 #pragma mark - GistListVCDelegate
 
 - (void)didLoad {
-    [self.interactor loadGistsList];
+    [self.interactor loadNextGistsListPage];
+}
+
+- (void)didScrollToLastElement {
+    [self.interactor loadNextGistsListPage];
 }
 
 @end

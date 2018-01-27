@@ -16,5 +16,4 @@
 
 @interface GistListInteractor : NSObject
 @property (weak) id<GistListInteractorOutput> presenter;
-- (void)loadGistsList;
 @end

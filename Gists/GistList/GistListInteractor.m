@@ -9,21 +9,55 @@
 #import "GistListInteractor.h"
 #import "AFNetworking.h"
 
+@interface GistListInteractor()
+@property int currentPage;
+@property BOOL didLoadLastPage;
+@property NSNumber *loadingPage;
+@end
+
 @implementation GistListInteractor
 
-- (void)loadGistsList {
+- (instancetype)init {
+    if ( self = [super init] ) {
+        self.currentPage = 1; // gists have 1-based paging
+    }
+    return self;
+}
+
+- (void)loadNextGistsListPage {
+    
+    if ( self.didLoadLastPage ) {
+        return;
+    }
+    
+    if ( [self.loadingPage isEqual:@(self.currentPage)] ) {
+        return;
+    }
+    
+    self.loadingPage = @(self.currentPage);
+    
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSURL *URL = [NSURL URLWithString:@"https://api.github.com/gists/public"];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.github.com/gists/public?page=%d", self.currentPage];
+    NSURL *URL = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        self.loadingPage = nil;
         if (error) {
             [self.presenter didFailLoadGistsWithError:error];
-        } else {
+        }
+        else if ( [responseObject isKindOfClass:[NSArray class]] ) {
             NSArray<GistListElement *> *elements = [self gistListElementsFromResponse:responseObject];
             [self.presenter didLoadGists:elements];
+            if (elements.count > 0) {
+                self.currentPage++;
+            } else {
+                self.didLoadLastPage = YES;
+            }
+        } else {
+            [self.presenter didFailLoadGistsWithError:[NSError errorWithDomain:@"Unexpected response" code:200 userInfo:@{NSLocalizedDescriptionKey: @"responseObject is not an array"}]];
         }
     }];
     [dataTask resume];

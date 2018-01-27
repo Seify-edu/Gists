@@ -11,6 +11,7 @@
 
 @protocol GistListViewOutput
 - (void)didLoad;
+- (void)didScrollToLastElement;
 @end
 
 @interface GistListView : UITableViewController

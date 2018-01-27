@@ -16,7 +16,7 @@
 @end
 
 @protocol GistListPresenterToInteractorOutput
-- (void)loadGistsList;
+- (void)loadNextGistsListPage;
 @end
 
 
