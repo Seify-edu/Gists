@@ -8,6 +8,7 @@
 
 #import "GistListInteractor.h"
 #import "AFNetworking.h"
+#import "NetworkManager.h"
 
 @interface GistListInteractor()<GistListPresenterToInteractorOutput>
 @property int currentPage;
@@ -36,14 +37,8 @@
     
     self.loadingPage = @(self.currentPage);
     
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSString *urlString = [NSString stringWithFormat:@"https://api.github.com/gists/public?page=%d", self.currentPage];
-    NSURL *URL = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    NSString *urlString = [NSString stringWithFormat:@"/gists/public?page=%d", self.currentPage];
+    [[NetworkManager shared] dataTaskWithString:urlString completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         self.loadingPage = nil;
         if (error) {
             [self.presenter didFailLoadGistsWithError:error];
@@ -60,7 +55,6 @@
             [self.presenter didFailLoadGistsWithError:[NSError errorWithDomain:@"Unexpected response" code:200 userInfo:@{NSLocalizedDescriptionKey: @"responseObject is not an array"}]];
         }
     }];
-    [dataTask resume];
 };
 
 - (NSArray<GistListElement *> *)gistListElementsFromResponse:(NSArray *)response

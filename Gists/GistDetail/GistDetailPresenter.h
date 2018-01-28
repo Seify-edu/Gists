@@ -14,7 +14,12 @@
 - (void)showError:(NSError *)error;
 @end
 
+@protocol GistDetailPresenterToInteractorOutput
+- (void)loadContentForGistID:(NSString *)gistID;
+@end
+
 @interface GistDetailPresenter : NSObject
 - (instancetype)initWithGistListElement:(GistListElement *)element;
 @property (weak) id<GistDetailPresenterToViewOutput> view;
+@property (strong) id<GistDetailPresenterToInteractorOutput> interactor;
 @end
