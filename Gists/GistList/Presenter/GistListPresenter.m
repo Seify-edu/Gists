@@ -32,7 +32,7 @@
     [self.view showError:error];
 }
 
-#pragma mark - GistListVCDelegate
+#pragma mark - GistListViewOutput
 
 - (void)didLoad {
     [self.interactor loadNextGistsListPage];
@@ -44,9 +44,8 @@
 
 - (void)didSelectDataAtIndex:(NSUInteger)index {
     if ( self.gists.count > index ) {
-        [self.router showDetailedGistWithID:self.gists[index].gistID];
+        [self.router showDetailedGist:self.gists[index]];
     }
 }
-
 
 @end

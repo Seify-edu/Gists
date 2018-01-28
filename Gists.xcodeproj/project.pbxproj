@@ -13,6 +13,10 @@
 		602B44D0201C4BC3002F15AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602B44CE201C4BC3002F15AE /* LaunchScreen.storyboard */; };
 		602B44D3201C4BC3002F15AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B44D2201C4BC3002F15AE /* main.m */; };
 		60C8B678201D904000CFDAB3 /* GistListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8B677201D904000CFDAB3 /* GistListRouter.m */; };
+		60C8B688201DA49A00CFDAB3 /* GistDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8B686201DA49A00CFDAB3 /* GistDetailView.m */; };
+		60C8B689201DA49A00CFDAB3 /* GistDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60C8B687201DA49A00CFDAB3 /* GistDetailView.xib */; };
+		60C8B68C201DA51800CFDAB3 /* GistDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8B68B201DA51800CFDAB3 /* GistDetailPresenter.m */; };
+		60C8B68F201DA81500CFDAB3 /* GistDetailAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8B68E201DA81500CFDAB3 /* GistDetailAssembler.m */; };
 		60C9D2AE201C5BE400C920E2 /* GistListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */; };
 		60C9D2B1201C62E100C920E2 /* GistListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2B0201C62E100C920E2 /* GistListPresenter.m */; };
 		60C9D2B5201C71E200C920E2 /* GistListAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2B4201C71E200C920E2 /* GistListAssembler.m */; };
@@ -37,6 +41,13 @@
 		60C5AA30A76E116FE3662578 /* Pods-Gists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gists.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gists/Pods-Gists.release.xcconfig"; sourceTree = "<group>"; };
 		60C8B676201D904000CFDAB3 /* GistListRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListRouter.h; sourceTree = "<group>"; };
 		60C8B677201D904000CFDAB3 /* GistListRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListRouter.m; sourceTree = "<group>"; };
+		60C8B685201DA49A00CFDAB3 /* GistDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistDetailView.h; sourceTree = "<group>"; };
+		60C8B686201DA49A00CFDAB3 /* GistDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistDetailView.m; sourceTree = "<group>"; };
+		60C8B687201DA49A00CFDAB3 /* GistDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistDetailView.xib; sourceTree = "<group>"; };
+		60C8B68A201DA51800CFDAB3 /* GistDetailPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistDetailPresenter.h; sourceTree = "<group>"; };
+		60C8B68B201DA51800CFDAB3 /* GistDetailPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistDetailPresenter.m; sourceTree = "<group>"; };
+		60C8B68D201DA81500CFDAB3 /* GistDetailAssembler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistDetailAssembler.h; sourceTree = "<group>"; };
+		60C8B68E201DA81500CFDAB3 /* GistDetailAssembler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistDetailAssembler.m; sourceTree = "<group>"; };
 		60C9D2AC201C5BE400C920E2 /* GistListInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListInteractor.h; sourceTree = "<group>"; };
 		60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListInteractor.m; sourceTree = "<group>"; };
 		60C9D2AF201C62E100C920E2 /* GistListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListPresenter.h; sourceTree = "<group>"; };
@@ -105,6 +116,7 @@
 				602B44C3201C4BC3002F15AE /* AppDelegate.h */,
 				602B44C4201C4BC3002F15AE /* AppDelegate.m */,
 				60C9D2B2201C71CC00C920E2 /* GistList */,
+				60C8B67F201DA0FF00CFDAB3 /* GistDetail */,
 				602B44CC201C4BC3002F15AE /* Assets.xcassets */,
 				602B44CE201C4BC3002F15AE /* LaunchScreen.storyboard */,
 				602B44D1201C4BC3002F15AE /* Info.plist */,
@@ -113,25 +125,87 @@
 			path = Gists;
 			sourceTree = "<group>";
 		};
-		60C9D2B2201C71CC00C920E2 /* GistList */ = {
+		60C8B679201DA09400CFDAB3 /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
 				60C9D2B3201C71E200C920E2 /* GistListAssembler.h */,
 				60C9D2B4201C71E200C920E2 /* GistListAssembler.m */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		60C8B67A201DA0A500CFDAB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				602B44C6201C4BC3002F15AE /* GistListView.h */,
 				602B44C7201C4BC3002F15AE /* GistListView.m */,
 				60C9D2B8201C784A00C920E2 /* GistListView.xib */,
 				60E33133201C858B00F8BBB0 /* GistListCell.h */,
 				60E33134201C858B00F8BBB0 /* GistListCell.m */,
 				60E33135201C858B00F8BBB0 /* GistListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60C8B67B201DA0B100CFDAB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
 				60C9D2AF201C62E100C920E2 /* GistListPresenter.h */,
 				60C9D2B0201C62E100C920E2 /* GistListPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		60C8B67C201DA0BB00CFDAB3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
 				60C9D2AC201C5BE400C920E2 /* GistListInteractor.h */,
 				60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		60C8B67D201DA0C800CFDAB3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
 				60C8B676201D904000CFDAB3 /* GistListRouter.h */,
 				60C8B677201D904000CFDAB3 /* GistListRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		60C8B67E201DA0D300CFDAB3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
 				60E33138201C8A2E00F8BBB0 /* GistListElement.h */,
 				60E33139201C8A2E00F8BBB0 /* GistListElement.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		60C8B67F201DA0FF00CFDAB3 /* GistDetail */ = {
+			isa = PBXGroup;
+			children = (
+				60C8B68D201DA81500CFDAB3 /* GistDetailAssembler.h */,
+				60C8B68E201DA81500CFDAB3 /* GistDetailAssembler.m */,
+				60C8B685201DA49A00CFDAB3 /* GistDetailView.h */,
+				60C8B686201DA49A00CFDAB3 /* GistDetailView.m */,
+				60C8B687201DA49A00CFDAB3 /* GistDetailView.xib */,
+				60C8B68A201DA51800CFDAB3 /* GistDetailPresenter.h */,
+				60C8B68B201DA51800CFDAB3 /* GistDetailPresenter.m */,
+			);
+			path = GistDetail;
+			sourceTree = "<group>";
+		};
+		60C9D2B2201C71CC00C920E2 /* GistList */ = {
+			isa = PBXGroup;
+			children = (
+				60C8B679201DA09400CFDAB3 /* Assembler */,
+				60C8B67A201DA0A500CFDAB3 /* View */,
+				60C8B67B201DA0B100CFDAB3 /* Presenter */,
+				60C8B67C201DA0BB00CFDAB3 /* Interactor */,
+				60C8B67E201DA0D300CFDAB3 /* Entity */,
+				60C8B67D201DA0C800CFDAB3 /* Router */,
 			);
 			path = GistList;
 			sourceTree = "<group>";
@@ -199,6 +273,7 @@
 			files = (
 				60E33137201C858B00F8BBB0 /* GistListCell.xib in Resources */,
 				602B44D0201C4BC3002F15AE /* LaunchScreen.storyboard in Resources */,
+				60C8B689201DA49A00CFDAB3 /* GistDetailView.xib in Resources */,
 				602B44CD201C4BC3002F15AE /* Assets.xcassets in Resources */,
 				60C9D2B9201C784A00C920E2 /* GistListView.xib in Resources */,
 			);
@@ -262,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C8B68F201DA81500CFDAB3 /* GistDetailAssembler.m in Sources */,
 				602B44C8201C4BC3002F15AE /* GistListView.m in Sources */,
 				60E3313A201C8A2E00F8BBB0 /* GistListElement.m in Sources */,
 				60C9D2B1201C62E100C920E2 /* GistListPresenter.m in Sources */,
@@ -270,6 +346,8 @@
 				60C8B678201D904000CFDAB3 /* GistListRouter.m in Sources */,
 				60E33136201C858B00F8BBB0 /* GistListCell.m in Sources */,
 				60C9D2AE201C5BE400C920E2 /* GistListInteractor.m in Sources */,
+				60C8B688201DA49A00CFDAB3 /* GistDetailView.m in Sources */,
+				60C8B68C201DA51800CFDAB3 /* GistDetailPresenter.m in Sources */,
 				60C9D2B5201C71E200C920E2 /* GistListAssembler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

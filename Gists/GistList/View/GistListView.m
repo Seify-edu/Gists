@@ -25,7 +25,7 @@
     [self.presenter didLoad];
 }
 
-#pragma mark - GistListDataSourceDelegate
+#pragma mark - GistListPresenterToViewOutput
 
 - (void)showData:(NSArray<GistListElement *> *)data {
     self.data = data;
@@ -45,11 +45,16 @@
                                 }];
     
     [alert addAction:okButton];
-    [self presentViewController:alert animated:YES completion:nil];}
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
-#pragma mark -
+#pragma mark - GistListRouterOutput
 
-#pragma mark - Table view data source
+- (void)presentViewController:(UIViewController *)vc {
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -58,8 +63,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.data.count;
 }
-
-#pragma mark - UITableViewDataSource
 
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      GistListCell *cell = (GistListCell *)[tableView dequeueReusableCellWithIdentifier:@"GistListCell" forIndexPath:indexPath];
@@ -82,10 +85,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     [self.presenter didSelectDataAtIndex:indexPath.row];
-}
-
-- (void)presentViewController:(UIViewController *)vc {
-    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end

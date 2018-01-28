@@ -7,14 +7,17 @@
 //
 
 #import "GistListRouter.h"
+#import "GistDetailAssembler.h"
+#import "GistListElement.h"
 
 @interface GistListRouter()<GistListPresenterToRouterOutput>
 @end
 
 @implementation GistListRouter
 
-- (void)showDetailedGistWithID:(NSString *)gistID { 
-    [self.view presentViewController:[UIViewController new]];
+- (void)showDetailedGist:(GistListElement *)element {
+    UIViewController *vc = [GistDetailAssembler assembleWithGist:element];
+    [self.view presentViewController:vc];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GistListInteractor.h"
 #import "GistListView.h"
+#import "GistListElement.h"
 
 @protocol GistListPresenterToViewOutput
 - (void)showData:(NSArray *)data;
@@ -16,7 +17,7 @@
 @end
 
 @protocol GistListPresenterToRouterOutput
-- (void)showDetailedGistWithID:(NSString *)gistID;
+- (void)showDetailedGist:(GistListElement *)element;
 @end
 
 @protocol GistListPresenterToInteractorOutput
