@@ -14,11 +14,18 @@
 
 @implementation GistListPresenter
 
+- (instancetype)init {
+    if ( self = [super init] ) {
+        self.gists = [NSMutableArray array];
+    }
+    return self;
+}
+
 #pragma mark - GistListDataLoaderDelegate
 
 - (void)didLoadGists:(NSArray *)gists {
     [self.gists addObjectsFromArray:gists];
-    [self.view showData:gists];
+    [self.view showData:self.gists];
 }
 
 - (void)didFailLoadGistsWithError:(NSError *)error {

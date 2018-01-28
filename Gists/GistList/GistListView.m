@@ -13,7 +13,6 @@
 
 @interface GistListView ()
 @property NSArray<GistListElement *> *data;
-@property CGPoint contentOffset;
 @end
 
 @implementation GistListView
@@ -29,10 +28,8 @@
 #pragma mark - GistListDataSourceDelegate
 
 - (void)showData:(NSArray<GistListElement *> *)data {
-    self.contentOffset = self.tableView.contentOffset;
     self.data = data;
     [self.tableView reloadData];
-    self.tableView.contentOffset = self.contentOffset;
 }
 
 - (void)showError:(NSError *)error {
