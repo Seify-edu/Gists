@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GistListPresenter.h"
 #import "GistListElement.h"
 
 @protocol GistListInteractorOutput

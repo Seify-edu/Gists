@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    GistListView *vc = [GistListAssembler assemble];
+    UIViewController *vc = [GistListAssembler assemble];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nc;
     [self.window makeKeyAndVisible];

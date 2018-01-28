@@ -9,7 +9,7 @@
 #import "GistListPresenter.h"
 
 @interface GistListPresenter()<GistListInteractorOutput, GistListViewOutput>
-@property NSMutableArray *gists;
+@property NSMutableArray<GistListElement *> *gists;
 @end
 
 @implementation GistListPresenter
@@ -41,5 +41,12 @@
 - (void)didScrollToLastElement {
     [self.interactor loadNextGistsListPage];
 }
+
+- (void)didSelectDataAtIndex:(NSUInteger)index {
+    if ( self.gists.count > index ) {
+        [self.router showDetailedGistWithID:self.gists[index].gistID];
+    }
+}
+
 
 @end

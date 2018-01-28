@@ -12,6 +12,7 @@
 		602B44CD201C4BC3002F15AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602B44CC201C4BC3002F15AE /* Assets.xcassets */; };
 		602B44D0201C4BC3002F15AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602B44CE201C4BC3002F15AE /* LaunchScreen.storyboard */; };
 		602B44D3201C4BC3002F15AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B44D2201C4BC3002F15AE /* main.m */; };
+		60C8B678201D904000CFDAB3 /* GistListRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8B677201D904000CFDAB3 /* GistListRouter.m */; };
 		60C9D2AE201C5BE400C920E2 /* GistListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */; };
 		60C9D2B1201C62E100C920E2 /* GistListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2B0201C62E100C920E2 /* GistListPresenter.m */; };
 		60C9D2B5201C71E200C920E2 /* GistListAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9D2B4201C71E200C920E2 /* GistListAssembler.m */; };
@@ -34,6 +35,8 @@
 		602B44D1201C4BC3002F15AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602B44D2201C4BC3002F15AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		60C5AA30A76E116FE3662578 /* Pods-Gists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gists.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gists/Pods-Gists.release.xcconfig"; sourceTree = "<group>"; };
+		60C8B676201D904000CFDAB3 /* GistListRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListRouter.h; sourceTree = "<group>"; };
+		60C8B677201D904000CFDAB3 /* GistListRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListRouter.m; sourceTree = "<group>"; };
 		60C9D2AC201C5BE400C920E2 /* GistListInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListInteractor.h; sourceTree = "<group>"; };
 		60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GistListInteractor.m; sourceTree = "<group>"; };
 		60C9D2AF201C62E100C920E2 /* GistListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GistListPresenter.h; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				60C9D2B0201C62E100C920E2 /* GistListPresenter.m */,
 				60C9D2AC201C5BE400C920E2 /* GistListInteractor.h */,
 				60C9D2AD201C5BE400C920E2 /* GistListInteractor.m */,
+				60C8B676201D904000CFDAB3 /* GistListRouter.h */,
+				60C8B677201D904000CFDAB3 /* GistListRouter.m */,
 				60E33138201C8A2E00F8BBB0 /* GistListElement.h */,
 				60E33139201C8A2E00F8BBB0 /* GistListElement.m */,
 			);
@@ -262,6 +267,7 @@
 				60C9D2B1201C62E100C920E2 /* GistListPresenter.m in Sources */,
 				602B44D3201C4BC3002F15AE /* main.m in Sources */,
 				602B44C5201C4BC3002F15AE /* AppDelegate.m in Sources */,
+				60C8B678201D904000CFDAB3 /* GistListRouter.m in Sources */,
 				60E33136201C858B00F8BBB0 /* GistListCell.m in Sources */,
 				60C9D2AE201C5BE400C920E2 /* GistListInteractor.m in Sources */,
 				60C9D2B5201C71E200C920E2 /* GistListAssembler.m in Sources */,

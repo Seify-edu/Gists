@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GistListPresenter.h"
+#import "GistListRouter.h"
 
 @protocol GistListViewOutput
 - (void)didLoad;
 - (void)didScrollToLastElement;
+- (void)didSelectDataAtIndex:(NSUInteger)index;
 @end
 
 @interface GistListView : UITableViewController

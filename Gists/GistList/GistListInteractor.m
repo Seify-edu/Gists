@@ -9,7 +9,7 @@
 #import "GistListInteractor.h"
 #import "AFNetworking.h"
 
-@interface GistListInteractor()
+@interface GistListInteractor()<GistListPresenterToInteractorOutput>
 @property int currentPage;
 @property BOOL didLoadLastPage;
 @property NSNumber *loadingPage;

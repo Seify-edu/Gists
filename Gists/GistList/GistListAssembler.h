@@ -6,11 +6,8 @@
 //  Copyright © 2018 RS. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "GistListView.h"
-#import "GistListPresenter.h"
-#import "GistListInteractor.h"
+#import <UIKit/UIKit.h>
 
 @interface GistListAssembler : NSObject
-+ (GistListView *)assemble;
++ (UIViewController *)assemble;
 @end
