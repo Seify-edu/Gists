@@ -139,7 +139,7 @@
 				602B44C4201C4BC3002F15AE /* AppDelegate.m */,
 				60C9D2B2201C71CC00C920E2 /* GistList */,
 				60C8B67F201DA0FF00CFDAB3 /* GistDetail */,
-				60C8B698201E10E700CFDAB3 /* Servises */,
+				60C8B698201E10E700CFDAB3 /* Serviсes */,
 				602B44CC201C4BC3002F15AE /* Assets.xcassets */,
 				602B44CE201C4BC3002F15AE /* LaunchScreen.storyboard */,
 				602B44D1201C4BC3002F15AE /* Info.plist */,
@@ -218,13 +218,13 @@
 			path = GistDetail;
 			sourceTree = "<group>";
 		};
-		60C8B698201E10E700CFDAB3 /* Servises */ = {
+		60C8B698201E10E700CFDAB3 /* Serviсes */ = {
 			isa = PBXGroup;
 			children = (
 				60C8B699201E115000CFDAB3 /* NetworkManager.h */,
 				60C8B69A201E115000CFDAB3 /* NetworkManager.m */,
 			);
-			path = Servises;
+			path = "Serviсes";
 			sourceTree = "<group>";
 		};
 		60C8B6AC201EF3DD00CFDAB3 /* Assembler */ = {
