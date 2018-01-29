@@ -13,6 +13,7 @@
 @interface GistDetailPresenter()<GistDetailViewOutput, GistDetailInteractorOutput>
 @property (strong) GistListElement *gistData;
 @property (strong) NSArray *files;
+@property (strong) NSArray *commits;
 @end
 
 @implementation GistDetailPresenter
@@ -21,6 +22,7 @@
     if ( self = [super init] ) {
         self.gistData = element;
         self.files = @[];
+        self.commits = @[];
         [self.view showData:[self allData]];
     }
     return self;
@@ -30,6 +32,7 @@
     NSMutableArray *allData = [NSMutableArray array];
     [allData addObject:self.gistData];
     [allData addObjectsFromArray:self.files];
+    [allData addObjectsFromArray:self.commits];
     return allData;
 }
 
@@ -38,7 +41,7 @@
 - (void)didLoad {
     [self.view showData: @[self.gistData]];
     [self.interactor loadContentForGistID:self.gistData.gistID];
-    //load other stuff
+    [self.interactor loadCommitsForGistID:self.gistData.gistID];
 }
 
 #pragma mark - GistDetailInteractorOutput
@@ -49,6 +52,15 @@
 
 - (void)didLoadGistContent:(NSArray<GistDetailFile *> *)content {
     self.files = content;
+    [self.view showData: [self allData]];
+}
+
+- (void)didFailLoadGistsCommitsWithError:(NSError *)error {
+    [self.view showError:error];
+}
+
+- (void)didLoadGistCommits:(NSArray *)commits {
+    self.commits = commits;
     [self.view showData: [self allData]];
 }
 

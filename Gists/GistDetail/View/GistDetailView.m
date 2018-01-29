@@ -10,7 +10,9 @@
 #import "GistDetailPresenter.h"
 #import "GistListCell.h"
 #import "GistFileCell.h"
+#import "GistCommitCell.h"
 #import "GistDetailFile.h"
+#import "GistDetailCommit.h"
 #import "UIImageView+WebCache.h"
 
 @interface GistDetailView ()<GistDetailPresenterToViewOutput>
@@ -23,6 +25,7 @@
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"GistListCell" bundle:nil] forCellReuseIdentifier:@"GistListCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"GistFileCell" bundle:nil] forCellReuseIdentifier:@"GistFileCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"GistCommitCell" bundle:nil] forCellReuseIdentifier:@"GistCommitCell"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 122;
     [self.presenter didLoad];
@@ -80,7 +83,15 @@
         cell.nameLabel.text = file.name;
         cell.contentLabel.text = file.content;
         return cell;
-    } else {
+    } else if ( [data isKindOfClass:[GistDetailCommit class]] ) {
+        GistCommitCell *cell = (GistCommitCell *)[tableView dequeueReusableCellWithIdentifier:@"GistCommitCell" forIndexPath:indexPath];
+        GistDetailCommit *commit = data;
+        cell.titleLabel.text = commit.name;
+        cell.addedLabel.text = commit.stringsAdded;
+        cell.removedLabel.text = commit.stringsDeleted;
+        return cell;
+    }
+    else {
         return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
     }
 }

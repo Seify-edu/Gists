@@ -10,7 +10,6 @@
 #import "GistDetailView.h"
 #import "GistDetailPresenter.h"
 #import "GistDetailInteractor.h"
-//#import "GistDetailRouter.h"
 
 @implementation GistDetailAssembler
 
@@ -18,14 +17,11 @@
 {
     GistDetailInteractor *interactor = [GistDetailInteractor new];
     GistDetailPresenter *presenter = [[GistDetailPresenter alloc] initWithGistListElement:element];
-//    GistDetailRouter *router = [GistDetailRouter new];
     GistDetailView *view = [[GistDetailView alloc] initWithNibName:nil bundle:nil];
     
     interactor.presenter = (id<GistDetailInteractorOutput>)presenter;
     presenter.view = (id<GistDetailPresenterToViewOutput>)view;
     presenter.interactor = (id<GistDetailPresenterToInteractorOutput>)interactor;
-//    presenter.router = (id<GistDetailPresenterToRouterOutput>)router;
-//    router.view = (id<GistDetailRouterOutput>)view;
     view.presenter = (id<GistDetailViewOutput>)presenter;
     
     return view;

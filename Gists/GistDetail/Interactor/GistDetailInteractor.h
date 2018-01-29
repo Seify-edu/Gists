@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "GistDetailFile.h"
+#import "GistDetailCommit.h"
 
 @protocol GistDetailInteractorOutput
 - (void)didLoadGistContent:(NSArray<GistDetailFile *> *)content;
 - (void)didFailLoadGistsContentWithError:(NSError *)error;
+- (void)didLoadGistCommits:(NSArray<GistDetailCommit *> *)commits;
+- (void)didFailLoadGistsCommitsWithError:(NSError *)error;
 @end
 
 @interface GistDetailInteractor : NSObject

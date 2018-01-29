@@ -16,6 +16,7 @@
 
 @protocol GistDetailPresenterToInteractorOutput
 - (void)loadContentForGistID:(NSString *)gistID;
+- (void)loadCommitsForGistID:(NSString *)gistID;
 @end
 
 @interface GistDetailPresenter : NSObject

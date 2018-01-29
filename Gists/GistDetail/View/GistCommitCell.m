@@ -1,14 +1,14 @@
 //
-//  GistContentCell.m
+//  GistCommitCell.m
 //  Gists
 //
-//  Created by Roman S on 28/01/2018.
+//  Created by Roman S on 29/01/2018.
 //  Copyright © 2018 RS. All rights reserved.
 //
 
-#import "GistContentCell.h"
+#import "GistCommitCell.h"
 
-@implementation GistContentCell
+@implementation GistCommitCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
